@@ -59,7 +59,6 @@ export default function Header() {
             <div className="hidden md:flex items-center space-x-4 lg:space-x-8 mr-4">
               <Link href="/features" className={`text-sm lg:text-base ${isActive('/features') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'}`}>Features</Link>
               <Link href="/pricing" className={`text-sm lg:text-base ${isActive('/pricing') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'}`}>Pricing</Link>
-              <Link href="/about" className={`text-sm lg:text-base ${isActive('/about') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'}`}>About</Link>
               {session ? (
                 <>
                   <Link href="/dashboard" className={`text-sm lg:text-base ${isActive('/dashboard') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'}`}>Dashboard</Link>
@@ -95,7 +94,6 @@ export default function Header() {
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             <Link href="/features" onClick={() => setIsMenuOpen(false)} className={`text-base ${isActive('/features') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'}`}>Features</Link>
             <Link href="/pricing" onClick={() => setIsMenuOpen(false)} className={`text-base ${isActive('/pricing') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'}`}>Pricing</Link>
-            <Link href="/about" onClick={() => setIsMenuOpen(false)} className={`text-base ${isActive('/about') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'}`}>About</Link>
             {session ? (
               <>
                 <Link href="/dashboard" onClick={() => setIsMenuOpen(false)} className={`text-base ${isActive('/dashboard') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'}`}>Dashboard</Link>

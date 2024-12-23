@@ -5,45 +5,47 @@ import Link from 'next/link'
 
 const features = [
   {
-    title: "Interactive Dashboard",
-    description: "Access all your listings and marketplace activity in one centralized location. Our user-friendly dashboard provides a comprehensive overview of your account, with the ability to sort and filter listings for efficient management.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screen%20Shot%202024-12-22%20at%207.16.27%20PM-jcbExSHElwGykAmfKF7dGE9T1bSwgA.png"
-  },
-  {
     title: "Seamless Material Posting",
-    description: "Effortlessly add new materials with our user-friendly posting tool. Specify the type of material, quantity, and location quickly and easily, either by entering an address or selecting a spot on the map. Once posted, your materials are instantly visible to other professionals on their dashboards, making it simple for them to contact you.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screen%20Shot%202024-12-22%20at%207.13.22%20PM-RIzEoc1BVkJKnxCXVcRobVWgy5UwpE.png"
+    description: "Easily list your excess construction materials or find exactly what you need. Our intuitive interface allows for quick and detailed listings, ensuring that your materials find the right buyer or that you source the perfect materials for your project.",
+    images: [
+      { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/seamless-material-posting-IVdAF3rNDZ7s0VLiIzNZc7C4BPsswM.png", alt: "Seamless Material Posting Interface" },
+      { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/seamless-material-posting-2-Rl9Iy9Ue9Hy5Hy1Hy1Hy1Hy1Hy.png", alt: "Material Listing Form" }
+    ]
   },
   {
-    title: "My Listings View",
-    description: "Easily manage all your material postings in one place. Switch between a detailed list view and an interactive map view to visualize the locations and details of your postings. Edit, delete, or mark them as completed once they have been purchased or traded by another company, ensuring your listings are always up-to-date.",
+    title: "Interactive Map View",
+    description: "Visualize material locations with our interactive map feature. Quickly identify nearby opportunities, evaluate logistics, and make informed decisions based on material proximity to your project sites.",
     images: [
-      {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screen%20Shot%202024-12-22%20at%208.24.09%20PM-ReXsFYxoRMzvb9YFbKGRhQPpComZle.png",
-        alt: "My Listings List View"
-      },
-      {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screen%20Shot%202024-12-22%20at%208.24.46%20PM-XrKGCrxPl0vJBrAvzVW3uKJtMNOT5h.png",
-        alt: "My Listings Map View"
-      }
+      { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/interactive-map-view-xNdzOzxRUZHBj5TpImTmVCmdbqTyVu.png", alt: "Interactive Map Overview" },
+      { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/interactive-map-view-2-Rl9Iy9Ue9Hy5Hy1Hy1Hy1Hy1Hy1Hy.png", alt: "Map with Material Pins" }
+    ]
+  },
+  {
+    title: "Real-Time Messaging",
+    description: "Communicate directly with buyers or sellers through our built-in messaging system. Negotiate terms, ask questions, and finalize deals all within the platform, streamlining the entire transaction process.",
+    images: [
+      { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/real-time-messaging-fGd3HdmB8uTbIVNpRuCxczvXgz0L8u.png", alt: "Messaging Interface" },
+      { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/real-time-messaging-2-Rl9Iy9Ue9Hy5Hy1Hy1Hy1Hy1Hy1Hy.png", alt: "Chat History" }
     ]
   },
   {
     title: "Active Listings View",
-    description: "Explore all active listings in the marketplace. Switch between a comprehensive list view and a dynamic map view to find materials that meet your needs.",
-    image: "/placeholder.svg?height=400&width=600"
-  },
-  {
-    title: "Distance Calculation",
-    description: "See how far materials are from your location. Our platform automatically calculates and displays distances to help you make informed decisions about transportation and logistics.",
-    image: "/placeholder.svg?height=400&width=600"
-  },
-  {
-    title: "Material Variety",
-    description: "Find a wide range of construction materials including soil, gravel, sand, and concrete. Our platform caters to diverse project needs with comprehensive material listings.",
-    image: "/placeholder.svg?height=400&width=600"
+    description: "Keep track of your current listings and their status with our Active Listings feature. Easily manage, update, or remove listings as needed, ensuring that your inventory is always up-to-date and accurately represented.",
+    images: [
+      { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/active-listings-view-GTODdMNhm9cS3rD2hCE0aWVQZj7o8e.png", alt: "Active Listings Dashboard" },
+      { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/active-listings-view-2-Rl9Iy9Ue9Hy5Hy1Hy1Hy1Hy1Hy1Hy.png", alt: "Listing Management Interface" }
+    ]
   }
 ]
+
+const newAndMoreFeature = {
+  title: "And More Features",
+  description: "Take advantage of our powerful platform capabilities including advanced sorting and filtering options to find exactly what you need, real-time editing of your listings, distance calculations for better logistics planning, and coming soon - AI-powered matching to connect you with the perfect material trading partners. Our comprehensive suite of tools is designed to make construction material management as efficient as possible.",
+  image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screen%20Shot%202024-12-23%20at%203.19.31%20PM-EYfmywVLTUKInPQSPWREPc1wGI0fW5.png"
+}
+
+// Add the newAndMoreFeature to the features array
+features.push(newAndMoreFeature)
 
 export default function FeaturesPage() {
   return (
@@ -60,7 +62,7 @@ export default function FeaturesPage() {
                 <p className="text-gray-700 mb-4">{feature.description}</p>
               </div>
               <div className="md:w-1/2">
-                {'images' in feature ? (
+                {('images' in feature) ? (
                   <div className="grid gap-4">
                     {feature.images.map((img, imgIndex) => (
                       <Image
