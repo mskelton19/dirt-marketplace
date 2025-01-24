@@ -1,26 +1,15 @@
 {
   "compilerOptions": {
-<<<<<<< HEAD
     "target": "es5",
-=======
-    "target": "ES2017",
->>>>>>> 63ffb823f0b4f98385a7e458f9aa0fdd13a9d0aa
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-<<<<<<< HEAD
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
-=======
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
->>>>>>> 63ffb823f0b4f98385a7e458f9aa0fdd13a9d0aa
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -34,13 +23,7 @@
       "@/*": ["./*"]
     }
   },
-<<<<<<< HEAD
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
 
-=======
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "prisma/update-existing-users.js"],
-  "exclude": ["node_modules"]
-}
->>>>>>> 63ffb823f0b4f98385a7e458f9aa0fdd13a9d0aa
