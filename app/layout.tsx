@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -25,5 +26,33 @@ return (
     </body>
   </html>
 )
+=======
+import './globals.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
+import { inter } from './fonts'
+import ClientSessionProvider from './components/ClientSessionProvider'
+import Header from '@/components/Header'
+
+export const metadata = {
+  title: 'Dirt Marketplace',
+  description: 'Connect and trade excess construction materials',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <ClientSessionProvider>
+          <Header />
+          {children}
+        </ClientSessionProvider>
+      </body>
+    </html>
+  )
+>>>>>>> 63ffb823f0b4f98385a7e458f9aa0fdd13a9d0aa
 }
 

@@ -1,26 +1,46 @@
+<<<<<<< HEAD
 \`\`\`prisma
+=======
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+>>>>>>> 63ffb823f0b4f98385a7e458f9aa0fdd13a9d0aa
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
+<<<<<<< HEAD
   provider = "postgresql"
+=======
+  provider = "sqlite"
+>>>>>>> 63ffb823f0b4f98385a7e458f9aa0fdd13a9d0aa
   url      = env("DATABASE_URL")
 }
 
 model User {
+<<<<<<< HEAD
   id        String    @id @default(uuid())
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   firstName String
   lastName  String
   email     String    @unique
+=======
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  firstName String
+  lastName  String
+  email     String   @unique
+>>>>>>> 63ffb823f0b4f98385a7e458f9aa0fdd13a9d0aa
   password  String
   company   String
   role      String
   zipCode   Int
   phone     String
   listings  Listing[]
+<<<<<<< HEAD
 }
 
 model Listing {
@@ -63,4 +83,39 @@ model Message {
   // Add other fields as necessary
 }
 \`\`\`
+=======
+  sentMessages     Message[] @relation("SentMessages")
+  receivedMessages Message[] @relation("ReceivedMessages")
+}
+
+model Listing {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  type        String
+  quantity    Float
+  latitude    Float
+  longitude   Float
+  address     String
+  isAvailable Boolean  @default(true)
+  status      String   @default("ACTIVE")
+  condition   String
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+  content    String
+  senderId   String
+  receiverId String
+  sender     User     @relation("SentMessages", fields: [senderId], references: [id])
+  receiver   User     @relation("ReceivedMessages", fields: [receiverId], references: [id])
+
+  @@index([senderId])
+  @@index([receiverId])
+}
+>>>>>>> 63ffb823f0b4f98385a7e458f9aa0fdd13a9d0aa
 
