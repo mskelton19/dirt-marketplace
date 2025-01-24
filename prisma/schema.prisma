@@ -1,0 +1,66 @@
+\`\`\`prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  firstName String
+  lastName  String
+  email     String    @unique
+  password  String
+  company   String
+  role      String
+  zipCode   Int
+  phone     String
+  listings  Listing[]
+}
+
+model Listing {
+  id            String   @id @default(uuid())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  name          String
+  type          String
+  quantity      Float
+  latitude      Float
+  longitude     Float
+  address       String
+  isAvailable   Boolean  @default(true)
+  status        String   @default("ACTIVE")
+  condition     String
+  price         Float    @default(0)
+  unit          String   @default("")
+  site_name     String   @default("")
+  contact_email String   @default("")
+  contact_phone String   @default("")
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String
+  completedTransactions CompletedTransaction[]
+}
+
+model CompletedTransaction {
+  id              String   @id @default(uuid())
+  listing_id      String
+  quantity_moved  Float
+  partner_company String
+  transaction_type String  // 'full' or 'partial'
+  created_at      DateTime @default(now())
+  listing         Listing  @relation(fields: [listing_id], references: [id])
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  content   String
+  // Add other fields as necessary
+}
+\`\`\`
+
